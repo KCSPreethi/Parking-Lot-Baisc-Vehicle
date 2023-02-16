@@ -16,7 +16,7 @@ class SlotTest{
     }
 
     @Test
-    fun `To unbook slot when we unpark vehicle`() {
+    fun `To unBook slot when we unPark vehicle`() {
         val slot = Slot(100)
         var slotNumber = slot.assignSlotToVehicle()
         val ticket=Ticket(slotNumber)

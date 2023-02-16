@@ -1,16 +1,13 @@
 package models
 
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import java.time.LocalDateTime
 
-class VehicleTest{
+class VehicleTest {
 
     @BeforeEach
-    fun `clear all vehicle history`()
-    {
+    fun `clear all vehicle history`() {
 
 
     }
@@ -22,8 +19,8 @@ class VehicleTest{
         //Act
         val ticket: Ticket = vehicle.parkVehicle()
         //Assert
-        Assertions.assertEquals(ticket.getTicketNumber(),0)
-        Assertions.assertEquals(ticket.getSlotNumber(),1)
+        assertEquals(ticket.getTicketNumber(), 0)
+        assertEquals(ticket.getSlotNumber(), 1)
 
     }
 
@@ -36,8 +33,8 @@ class VehicleTest{
         val receipt: Receipt = vehicle.unParkVehicle(ticket)
 
         //Assert
-        assertEquals(receipt.getReceiptNumber(),0)
-        assertEquals(receipt.getParkingFee(),0)
+        assertEquals(receipt.getReceiptNumber(), 0)
+        assertEquals(receipt.getParkingFee(), 0)
 
     }
 

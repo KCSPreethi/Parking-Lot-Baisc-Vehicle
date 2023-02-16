@@ -24,7 +24,7 @@ class Ticket(private var slotParkingId: Int) {
         return slotParkingId
     }
 
-    fun getTicketNumber():Int{
+    fun getTicketNumber(): Int {
         return ticketNumber
     }
 

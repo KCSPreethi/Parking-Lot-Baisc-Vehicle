@@ -18,9 +18,10 @@ class Receipt(ticket: Ticket) {
         return this
     }
 
-    fun getReceiptNumber():Int{
+    fun getReceiptNumber(): Int {
         return receiptNumber
     }
+
     fun getParkingFee(): Long {
         return parkingFee
     }
