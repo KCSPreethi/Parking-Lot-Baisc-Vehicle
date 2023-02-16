@@ -1,5 +1,13 @@
+import models.Slot
+import models.Vehicle
+
 fun main(args: Array<String>) {
-    println("Hello World!")
+    var slot= Slot(100)
+    val vehicle=Vehicle(slot)
+    val ticket = vehicle.parkVehicle()
+    val receipt =vehicle.unParkVehicle(ticket)
+    receipt.printReceipt()
+
 
 
 
