@@ -23,7 +23,9 @@ class Vehicle {
     }
 
     private fun getDuration(entryTime: LocalDateTime, exitTime: LocalDateTime): Long {
-        return Duration.between(entryTime, exitTime).toSeconds()
+        val days = Duration.between(entryTime, exitTime).toDays()
+        val hours = Duration.between(entryTime, exitTime).toHours()
+        return (days*24)+hours
 
     }
 

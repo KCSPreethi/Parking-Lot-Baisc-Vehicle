@@ -21,7 +21,6 @@ class SlotTest{
         var slotNumber = slot.assignSlotToVehicle()
         val ticket=Ticket(slotNumber)
         slot.unBookSlot(ticket)
-
         assertEquals(false,slot.isSlotNumberParked(slotNumber))
 
     }
