@@ -36,8 +36,8 @@ class VehicleTest{
         val receipt: Receipt = vehicle.unParkVehicle(ticket)
 
         //Assert
-        Assertions.assertEquals(receipt.getReceiptNumber(),0)
-        Assertions.assertEquals(receipt.getParkingFee(),0)
+        assertEquals(receipt.getReceiptNumber(),0)
+        assertEquals(receipt.getParkingFee(),0)
 
     }
 
