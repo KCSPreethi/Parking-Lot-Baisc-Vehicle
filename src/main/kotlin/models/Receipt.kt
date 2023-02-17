@@ -4,6 +4,7 @@ import java.time.LocalDateTime
 
 class Receipt(ticket: Ticket) {
 
+    private val slotNumber = ticket.getSlotNumber()
     private val entryTimeForVehicle = ticket.getEntryTime()
     private var receiptNumber: Int = generateReceiptNumber()
     private var exitTime = LocalDateTime.now()
@@ -23,6 +24,13 @@ class Receipt(ticket: Ticket) {
     }
     fun getParkingFee(): Long {
         return parkingFee
+    }
+    fun printReceipt() {
+        println("Receipt Number $receiptNumber")
+        println("Entry Time For Vehicle $entryTimeForVehicle")
+        println("Exit Time for vehicle $exitTime")
+        println("Parking Fee $parkingFee")
+        println("Slot Number $slotNumber")
     }
 
 

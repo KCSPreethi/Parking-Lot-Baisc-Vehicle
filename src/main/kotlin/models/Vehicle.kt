@@ -3,9 +3,7 @@ package models
 import java.time.Duration
 import java.time.LocalDateTime
 
-class Vehicle {
-    private val slot= Slot(100)
-
+class Vehicle(private val slot: Slot) {
     fun parkVehicle(): Ticket {
           val slotNumber = slot.assignSlotToVehicle()
           val ticket = Ticket(slotNumber)
@@ -23,7 +21,7 @@ class Vehicle {
     }
 
     private fun getDuration(entryTime: LocalDateTime, exitTime: LocalDateTime): Long {
-        return Duration.between(entryTime,exitTime).toSeconds()
+        return Duration.between(entryTime,exitTime).toHours()
 
     }
 

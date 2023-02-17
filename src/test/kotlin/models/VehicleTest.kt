@@ -18,7 +18,8 @@ class VehicleTest{
     @Test
     fun `generate ticket and slot number when vehicle comes to park`() {
         //Arrange
-        val vehicle: Vehicle = Vehicle()
+        var slot=Slot(100)
+        val vehicle: Vehicle = Vehicle(slot)
         //Act
         val ticket: Ticket = vehicle.parkVehicle()
         //Assert
@@ -30,7 +31,8 @@ class VehicleTest{
     @Test
     fun `generate receipt when unParking vehicle`() {
         //Arrange
-        val vehicle: Vehicle = Vehicle()
+        var slot=Slot(100)
+        val vehicle: Vehicle = Vehicle(slot)
         //Act
         val ticket: Ticket = vehicle.parkVehicle()
         val receipt: Receipt = vehicle.unParkVehicle(ticket)

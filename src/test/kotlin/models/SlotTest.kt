@@ -15,7 +15,7 @@ class SlotTest {
     }
 
     @Test
-    fun `To unbook slot when we unpark vehicle`() {
+    fun `To unBook slot when we unpark vehicle`() {
         val slot = Slot(100)
         var slotNumber = slot.assignSlotToVehicle()
         val ticket = Ticket(slotNumber)
@@ -39,7 +39,6 @@ class SlotTest {
         assertEquals(2, ticketTwo.getSlotNumber())
         assertEquals(1, ticketOne.getSlotNumber())
         assertEquals(false, slot.isSlotNumberParked(slotNumberOne))
-
     }
 
 }
