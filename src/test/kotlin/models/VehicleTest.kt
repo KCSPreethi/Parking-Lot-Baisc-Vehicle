@@ -6,17 +6,11 @@ import org.junit.jupiter.api.Test
 
 class VehicleTest{
 
-    @BeforeEach
-    fun `clear all vehicle history`()
-    {
-
-
-    }
 
     @Test
     fun `generate ticket and slot number when vehicle comes to park`() {
         //Arrange
-        var slot=SlotsSchedules(100)
+        val slot=SlotsSchedules(100)
         val vehicle: Vehicle = Vehicle(slot)
         //Act
         val ticket: Ticket = vehicle.parkVehicle()
@@ -29,7 +23,7 @@ class VehicleTest{
     @Test
     fun `generate receipt when unParking vehicle`() {
         //Arrange
-        var slot=SlotsSchedules(100)
+        val slot=SlotsSchedules(100)
         val vehicle: Vehicle = Vehicle(slot)
         //Act
         val ticket: Ticket = vehicle.parkVehicle()
