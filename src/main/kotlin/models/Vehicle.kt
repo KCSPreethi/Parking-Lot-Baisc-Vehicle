@@ -3,7 +3,7 @@ package models
 import java.time.Duration
 import java.time.LocalDateTime
 
-class Vehicle(private val slot: Slot) {
+class Vehicle(private val slot: SlotsSchedules) {
     fun parkVehicle(): Ticket {
           val slotNumber = slot.assignSlotToVehicle()
           val ticket = Ticket(slotNumber)

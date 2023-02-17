@@ -1,10 +1,8 @@
 package models
 
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import java.time.LocalDateTime
 
 class VehicleTest{
 
@@ -18,7 +16,7 @@ class VehicleTest{
     @Test
     fun `generate ticket and slot number when vehicle comes to park`() {
         //Arrange
-        var slot=Slot(100)
+        var slot=SlotsSchedules(100)
         val vehicle: Vehicle = Vehicle(slot)
         //Act
         val ticket: Ticket = vehicle.parkVehicle()
@@ -31,7 +29,7 @@ class VehicleTest{
     @Test
     fun `generate receipt when unParking vehicle`() {
         //Arrange
-        var slot=Slot(100)
+        var slot=SlotsSchedules(100)
         val vehicle: Vehicle = Vehicle(slot)
         //Act
         val ticket: Ticket = vehicle.parkVehicle()

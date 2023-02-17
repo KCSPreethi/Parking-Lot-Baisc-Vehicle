@@ -1,9 +1,9 @@
-import models.Slot
+import models.SlotsSchedules
 import models.Vehicle
 
 fun main(args: Array<String>) {
 
-        var slot= Slot(100)
+        var slot= SlotsSchedules(100)
         val vehicle= Vehicle(slot)
         val ticket = vehicle.parkVehicle()
         val receipt =vehicle.unParkVehicle(ticket)

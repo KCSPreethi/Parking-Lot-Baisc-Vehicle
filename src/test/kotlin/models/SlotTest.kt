@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class SlotTest {
     @Test
     fun `To allot slot to vehicle coming`() {
-        val slot = Slot(100)
+        val slot = SlotsSchedules(100)
         var slotNumber = slot.assignSlotToVehicle()
         slotNumber = slot.assignSlotToVehicle()
 
@@ -16,7 +16,7 @@ class SlotTest {
 
     @Test
     fun `To unBook slot when we unpark vehicle`() {
-        val slot = Slot(100)
+        val slot = SlotsSchedules(100)
         var slotNumber = slot.assignSlotToVehicle()
         val ticket = Ticket(slotNumber)
         slot.unBookSlot(ticket)
@@ -26,7 +26,7 @@ class SlotTest {
 
     @Test
     fun `To check multiple vehicles availability`() {
-        val slot = Slot(100)
+        val slot = SlotsSchedules(100)
         var slotNumberOne = slot.assignSlotToVehicle()
         var slotNumberTwo = slot.assignSlotToVehicle()
 

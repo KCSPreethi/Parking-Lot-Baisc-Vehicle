@@ -1,6 +1,6 @@
 package models
 
-class Slot(private var totalSpots: Int) {
+class SlotsSchedules(private var totalSpots: Int) {
     private var slotSchedule : MutableList<Boolean> = MutableList(totalSpots+1){false}
     private var slotsAvailable: Int = totalSpots
 
