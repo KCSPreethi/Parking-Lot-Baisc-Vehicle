@@ -22,8 +22,8 @@ class VehicleTest{
         //Act
         val ticket: Ticket = vehicle.parkVehicle()
         //Assert
-        Assertions.assertEquals(ticket.getTicketNumber(),0)
-        Assertions.assertEquals(ticket.getSlotNumber(),1)
+        assertEquals(ticket.getTicketNumber(),0)
+        assertEquals(ticket.getSlotNumber(),1)
 
     }
 
