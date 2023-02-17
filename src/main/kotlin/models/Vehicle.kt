@@ -5,23 +5,24 @@ import java.time.LocalDateTime
 
 class Vehicle(private val slot: SlotsSchedules) {
     fun parkVehicle(): Ticket {
-          val slotNumber = slot.assignSlotToVehicle()
-          val ticket = Ticket(slotNumber)
-          return ticket.generateTicketForVehicle()
+        val slotNumber = slot.assignSlotToVehicle()
+        val ticket = Ticket(slotNumber)
+        return ticket.generateTicketForVehicle()
 
     }
 
     fun unParkVehicle(ticket: Ticket): Receipt {
-        val exitTime=LocalDateTime.now()
+        val exitTime = LocalDateTime.now()
         slot.unBookSlot(ticket)
-        val receipt= Receipt(ticket)
-        val parkingFee= getDuration(ticket.getEntryTime(),exitTime)*100
+        val receipt = Receipt(ticket)
+        val parkingFee = getDuration(ticket.getEntryTime(), exitTime) * 100
         return receipt.generateReceiptDuringUnParking(exitTime, parkingFee)
 
     }
 
     private fun getDuration(entryTime: LocalDateTime, exitTime: LocalDateTime): Long {
-        return Duration.between(entryTime,exitTime).toHours()
+        val days = Duration.between(entryTime, exitTime).toDays()
+        return (days * 24) + Duration.between(entryTime, exitTime).toHours()
 
     }
 
