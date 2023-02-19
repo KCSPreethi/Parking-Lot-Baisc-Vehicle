@@ -4,6 +4,7 @@ import models.Vehicle
 fun main(args: Array<String>) {
 
         var slot= SlotsSchedules(100)
+        //Slot object apply properly in services
         val vehicle= Vehicle(slot)
         val ticket = vehicle.parkVehicle()
         val receipt =vehicle.unParkVehicle(ticket)

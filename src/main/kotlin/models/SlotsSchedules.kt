@@ -1,6 +1,7 @@
 package models
 
 class SlotsSchedules(private var totalSpots: Int) {
+    //Data Structure for slotSchedule boolean array
     private var slotSchedule : MutableList<Boolean> = MutableList(totalSpots+1){false}
     private var slotsAvailable: Int = totalSpots
 

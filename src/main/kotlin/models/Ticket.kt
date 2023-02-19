@@ -8,6 +8,7 @@ class Ticket(private var slotParkingId: Int) {
     private var entryTimeDuringPark: LocalDateTime = LocalDateTime.now()
     private var ticketNumber: Int = generateTicketNumber()
 
+    //Ticket Dispenser model
     fun getEntryTime(): LocalDateTime {
         return entryTimeDuringPark
     }

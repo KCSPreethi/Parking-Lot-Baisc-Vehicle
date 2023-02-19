@@ -4,9 +4,14 @@ import java.time.Duration
 import java.time.LocalDateTime
 
 class Vehicle(private val slot: SlotsSchedules) {
+    //Ticket number
+    //Receipt number
+    //vehicle number
     fun parkVehicle(): Ticket {
         val slotNumber = slot.assignSlotToVehicle()
         val ticket = Ticket(slotNumber)
+        //Call ticket dispenser
+        //return ticket
         return ticket.generateTicketForVehicle()
 
     }

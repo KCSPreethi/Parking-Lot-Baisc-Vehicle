@@ -10,7 +10,7 @@ class SlotTest {
         val slotNumberOne = slot.assignSlotToVehicle()
         val slotNumberTwo = slot.assignSlotToVehicle()
 
-        assertEquals(1,slotNumberOne)
+        assertEquals(1, slotNumberOne)
         assertEquals(2, slotNumberTwo)
         assertEquals(true, slot.isSlotNumberParked(slotNumberTwo))
     }
