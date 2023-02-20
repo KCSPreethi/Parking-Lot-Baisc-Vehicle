@@ -1,5 +1,7 @@
 package models
 
+import exceptions.ParkingNotAvailable
+import org.junit.Assert.assertThrows
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -41,5 +43,38 @@ class SlotTest {
         assertEquals(1, ticketOne.getSlotNumber())
         assertEquals(false, slot.isSlotNumberParked(slotNumberOne))
     }
+    @Test
+    fun `To check non availability throwing error`() {
+        val slot = SlotsSchedules(0)
 
+
+        assertThrows(ParkingNotAvailable::class.java){
+            slot.assignSlotToVehicle()
+        }
+
+    }
+
+    @Test
+    fun one() {
+        val slot = SlotsSchedules(100)
+        val vehicle = Vehicle(1201)
+        val slotNumber = slot.assignSlotToVehicle()
+        val ticket = vehicle.park(slotNumber)
+
+        assertEquals(0,ticket.getTicketNumber())
+        assertEquals(1,ticket.getSlotNumber())
+
+    }
+
+    @Test
+    fun two() {
+        val slot = SlotsSchedules(100)
+        val vehicle = Vehicle(1201)
+        val slotNumber = slot.assignSlotToVehicle()
+        val ticket = vehicle.park(slotNumber)
+
+
+
+
+    }
 }
