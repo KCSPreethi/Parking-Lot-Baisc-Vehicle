@@ -12,11 +12,10 @@ class VehicleTest{
 
 
     @Test
-    fun one() {
+    fun `add two vehicles and check the details`() {
         val slot = SlotsSchedules(100)
         val vehicle = Vehicle(1201)
-        val slotNumber = slot.assignSlotToVehicle()
-        val ticket = vehicle.park(slotNumber)
+        val ticket = vehicle.park(ParkingService().assignSlotToVehicle(slot))
 
         assertEquals(0,ticket.getTicketNumber())
         assertEquals(1,ticket.getSlotNumber())
@@ -36,24 +35,6 @@ class VehicleTest{
         assertEquals(ticket.getSlotNumber(),1)
 
     }
-
-
-
-
-//    @Test
-//    fun `generate receipt when unParking vehicle`() {
-//        //Arrange
-//        val slot=SlotsSchedules(100)
-//        val vehicle: Vehicle = Vehicle(slot)
-//        //Act
-//        val ticket: Ticket = vehicle.parkVehicle()
-//        val receipt: Receipt = vehicle.unParkVehicle(ticket)
-//
-//        //Assert
-//        assertEquals(receipt.getReceiptNumber(),0)
-//        assertEquals(receipt.getParkingFee(),0)
-//
-//    }
 
 
 }
