@@ -1,15 +1,16 @@
 package repository
 
+import exceptions.VehicleTicketIncompatibleException
 import models.Ticket
 
 object TicketStore {
 
     private val allTickets = mutableMapOf<Int, Ticket>()
 
-    fun getTicketWithVehicleNo(vehicleNumber: Int): Ticket? {
+    fun getTicketWithVehicleNo(vehicleNumber: Int): Ticket {
 
         if (!allTickets.containsKey(vehicleNumber))
-            return null
+            throw VehicleTicketIncompatibleException("Vehicle number is not registered")
 
         return allTickets.getValue(vehicleNumber)
     }
