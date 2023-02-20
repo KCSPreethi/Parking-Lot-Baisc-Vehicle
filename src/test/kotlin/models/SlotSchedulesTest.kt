@@ -5,7 +5,7 @@ import org.junit.Assert.assertThrows
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class SlotSchedules {
+class SlotSchedulesTest {
     @Test
     fun `To allot slot to vehicle coming`() {
         val slot = SlotsSchedules(100)
@@ -43,12 +43,13 @@ class SlotSchedules {
         assertEquals(1, ticketOne.getSlotNumber())
         assertEquals(false, slot.isSlotNumberParked(slotNumberOne))
     }
+
     @Test
     fun `To check non availability throwing error`() {
         val slot = SlotsSchedules(0)
 
 
-        assertThrows(ParkingNotAvailable::class.java){
+        assertThrows(ParkingNotAvailable::class.java) {
             slot.assignSlotToVehicle()
         }
 
@@ -61,8 +62,6 @@ class SlotSchedules {
         val vehicle = Vehicle(1201)
         val slotNumber = slot.assignSlotToVehicle()
         val ticket = vehicle.park(slotNumber)
-
-
 
 
     }

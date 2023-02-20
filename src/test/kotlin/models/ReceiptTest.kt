@@ -11,8 +11,8 @@ class ReceiptTest {
         val receiptOne = Receipt(ticketOne)
         val receiptTwo = Receipt(ticketTwo)
 
-        Assertions.assertEquals(0,receiptOne.getReceiptNumber())
-        Assertions.assertEquals(1,receiptTwo.getReceiptNumber())
+        Assertions.assertEquals(0, receiptOne.getReceiptNumber())
+        Assertions.assertEquals(1, receiptTwo.getReceiptNumber())
 
     }
 }
