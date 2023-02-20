@@ -1,10 +1,20 @@
 import models.SlotsSchedules
 import models.Vehicle
+import services.ParkingService
 
 fun main(args: Array<String>) {
 
         val slot= SlotsSchedules(100)
-        val slotNumber =  slot.assignSlotToVehicle()
+        val slotNumber =  ParkingService().assignSlotToVehicle(slot)
+        val vehicle=Vehicle(1290)
+        val ticket = vehicle.park(slotNumber)
+
+        ParkingService().unBookSlotForVehicle(slot,ticket)
+        val receipt = vehicle.unPark(1290)
+
+
+
+
 
 
 //        if(slotNumber!=-1)

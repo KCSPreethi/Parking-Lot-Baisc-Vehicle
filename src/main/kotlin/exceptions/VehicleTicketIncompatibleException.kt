@@ -1,4 +1,4 @@
 package exceptions
 
-class VehicleTicketIncompatibleException {
+class VehicleTicketIncompatibleException(s: String) : Throwable(s) {
 }

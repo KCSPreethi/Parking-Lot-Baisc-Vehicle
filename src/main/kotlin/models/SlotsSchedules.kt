@@ -12,7 +12,6 @@ class SlotsSchedules(private var totalSpots: Int) {
             for (slot in 1..totalSpots) {
                 if (!isSlotNumberParked(slot)) {
                     bookSlotForTheVehicle(slot)
-
                     return slot
                 }
             }

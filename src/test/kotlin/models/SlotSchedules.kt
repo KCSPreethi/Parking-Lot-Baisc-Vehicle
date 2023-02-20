@@ -55,7 +55,6 @@ class SlotSchedules {
     }
 
 
-
     @Test
     fun two() {
         val slot = SlotsSchedules(100)
