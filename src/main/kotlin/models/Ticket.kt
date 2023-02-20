@@ -2,19 +2,19 @@ package models
 
 import java.time.LocalDateTime
 
-
+var TICKET_NUMBER = -1
 class Ticket(private var slotParkingId: Int) {
 
     private var entryTimeDuringPark: LocalDateTime = LocalDateTime.now()
-    private var ticketNumber: Int = generateTicketNumber()
+    private var ticketNumber: Int =  ++TICKET_NUMBER
 
+    //Ticket Dispenser model
     fun getEntryTime(): LocalDateTime {
         return entryTimeDuringPark
     }
 
-    private fun generateTicketNumber(): Int {
-        return ticketNumber++
-    }
+
+
 
     fun generateTicketForVehicle(): Ticket {
         return this
