@@ -17,6 +17,7 @@ class Ticket(private var slotParkingId: Int) {
         return ticketNumber++
     }
 
+
     fun generateTicketForVehicle(): Ticket {
         return this
     }
