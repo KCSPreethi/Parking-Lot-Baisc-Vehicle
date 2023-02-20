@@ -8,6 +8,20 @@ import services.ParkingService
 class VehicleTest{
 
 //
+
+
+
+    @Test
+    fun one() {
+        val slot = SlotsSchedules(100)
+        val vehicle = Vehicle(1201)
+        val slotNumber = slot.assignSlotToVehicle()
+        val ticket = vehicle.park(slotNumber)
+
+        assertEquals(0,ticket.getTicketNumber())
+        assertEquals(1,ticket.getSlotNumber())
+
+    }
     @Test
     fun `generate ticket and slot number when vehicle comes to park`() {
         //Arrange
@@ -22,7 +36,10 @@ class VehicleTest{
         assertEquals(ticket.getSlotNumber(),1)
 
     }
-//
+
+
+
+
 //    @Test
 //    fun `generate receipt when unParking vehicle`() {
 //        //Arrange

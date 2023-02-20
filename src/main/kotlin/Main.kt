@@ -5,6 +5,8 @@ fun main(args: Array<String>) {
 
         val slot= SlotsSchedules(100)
         val slotNumber =  slot.assignSlotToVehicle()
+
+
 //        if(slotNumber!=-1)
 //
 //

@@ -5,6 +5,10 @@ import java.time.Duration
 import java.time.LocalDateTime
 
 class Vehicle(private val vehicleNumber:Int) {
+    private var ticketNumber: Int? = null
+    private var receiptNumber : Int? =null
+
+
     //Ticket number
     //Receipt number
     //vehicle number
@@ -32,6 +36,13 @@ class Vehicle(private val vehicleNumber:Int) {
 
     }
 
+    fun setTicketNumber(ticketNo:Int){
+        ticketNumber=ticketNo
+    }
+
+    fun setReceiptNumber(receiptNo:Int){
+        receiptNumber=receiptNo
+    }
     fun park(slotNumber: Int): Ticket {
         val ticketDispenser = TicketDispenser()
         return ticketDispenser.getTicket(  slotNumber,this)
